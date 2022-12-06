@@ -213,16 +213,13 @@
 					"fontsize" : 8.0,
 					"gradient" : 1,
 					"id" : "obj-9",
-					"linecount" : 6,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 129.104596376419067, 166.0, 68.0, 66.0 ],
+					"patching_rect" : [ 129.104596376419067, 166.0, 68.0, 18.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 5,
-					"presentation_rect" : [ 1.0, 0.0, 75.0, 56.0 ],
-					"text" : "B:/ART/UWB_Playground-main/UWB_Playground-main/UWB-maxmsp/rightfrontcorner.wav",
+					"presentation_rect" : [ 1.0, 0.0, 75.0, 18.0 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
