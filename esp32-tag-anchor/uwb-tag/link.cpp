@@ -52,9 +52,7 @@ struct MyLink *find_link(struct MyLink *p, uint16_t addr) {
 void update_link(struct MyLink *p, uint16_t addr, float range, float dbm) {
   struct MyLink *temp = find_link(p, addr);
   if (temp != NULL) {
-    temp->range[2] = temp->range[1];
-    temp->range[1] = temp->range[0];
-    temp->range[0] = (range + temp->range[1] + temp->range[2]) / 3;
+    temp->range[0] = range;
     temp->dbm = dbm;
     return;
   }
