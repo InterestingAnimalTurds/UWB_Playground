@@ -51,6 +51,8 @@ if __name__ == '__main__':
     current_average_data_2 = 0
     current_average_data_1 = 0
     count = 0
+    anchor_tomax_id_1 = ""
+    anchor_tomax_id_2 = ""
     # Listen for incoming datagrams
 
     while(True):
@@ -96,11 +98,20 @@ if __name__ == '__main__':
 
                     print(f"{anchor_1_id}'s range is {anchor_1_range_denoised}")
                     print(f"{anchor_2_id}'s range is {anchor_2_range_denoised}")
+                    if anchor_1_id == '5' and anchor_2_id == '3':
+                        anchor_tomax_id_1 = "Anchor_1"
+                        anchor_tomax_id_2 = "Anchor_2"
+                    elif anchor_1_id == '3' and anchor_2_id == '5':
+                        anchor_tomax_id_1 = "Anchor_2"
+                        anchor_tomax_id_2 = "Anchor_1"
+                    else:
+                        anchor_tomax_id_1 = "1_Not regonized"
+                        anchor_tomax_id_2 = "2_Note regonized"
                     count = 0
                     list_anchor_1_data = []
                     list_anchor_2_data = []
-                    OSC_toMax.send_message('Anchor_1',float(anchor_1_range_denoised))
-                    OSC_toMax.send_message('Anchor_2',float(anchor_2_range_denoised))
+                    OSC_toMax.send_message(anchor_tomax_id_1,float(anchor_1_range_denoised))
+                    OSC_toMax.send_message(anchor_tomax_id_2,float(anchor_2_range_denoised))
                     #print(clientIP)
 
 
@@ -135,7 +146,6 @@ if __name__ == '__main__':
             print("No Anchor detected!")
             OSC_toMax.send_message('Anchor_1',0)
             OSC_toMax.send_message('Anchor_2',0)
-            
             list_anchor_1_data = []
             list_anchor_2_data = []
             count = 0
